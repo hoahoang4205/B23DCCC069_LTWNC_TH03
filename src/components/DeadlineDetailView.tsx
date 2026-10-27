@@ -66,6 +66,8 @@ export default function DeadlineDetailView({
     }
   };
 
+  const theme = getSubjectTheme(deadline.subjectSlug);
+
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {/* 1. Breadcrumb chuẩn Semantic Accessible HTML */}
@@ -101,7 +103,7 @@ export default function DeadlineDetailView({
         {/* Header: Môn học + Đếm ngược */}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full border border-blue-100 flex items-center gap-1.5">
+            <span className={`text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 ${theme.badgeClass}`}>
               <BookOutlined />
               <span>{subject?.name || deadline.subjectSlug}</span>
             </span>

@@ -22,7 +22,7 @@ import {
   BookOutlined,
   ExclamationCircleOutlined,
 } from '@/components/icons';
-import type { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import type { Deadline, Subject } from '@/types';
 import Countdown from '@/components/Countdown';
 import { createDeadline, deleteDeadline } from '@/app/actions/deadline';
@@ -257,6 +257,29 @@ export default function AdminDeadlineManager({
               placeholder="Chọn ngày và giờ hạn nộp"
               className="w-full"
               size="large"
+              minDate={dayjs().startOf('day')}
+              disabledDate={(date) =>
+                date.startOf('day').isBefore(dayjs().startOf('day'))
+              }
+              disabledTime={(date) => {
+                if (!date?.isSame(dayjs(), 'day')) {
+                  return {};
+                }
+
+                const now = dayjs();
+                return {
+                  disabledHours: () =>
+                    Array.from({ length: now.hour() }, (_, hour) => hour),
+                  disabledMinutes: (hour) =>
+                    hour === now.hour()
+                      ? Array.from({ length: now.minute() }, (_, minute) => minute)
+                      : [],
+                  disabledSeconds: (hour, minute) =>
+                    hour === now.hour() && minute === now.minute()
+                      ? Array.from({ length: now.second() }, (_, second) => second)
+                      : [],
+                };
+              }}
             />
           </Form.Item>
 

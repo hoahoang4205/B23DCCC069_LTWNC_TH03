@@ -18,9 +18,14 @@ const createDeadlineSchema = z.object({
   subjectSlug: z.string().min(1, 'Vui lòng chọn môn học.'),
   title: z.string().trim().min(3, 'Tiêu đề phải có ít nhất 3 ký tự.'),
   description: z.string().max(5000, 'Mô tả không được vượt quá 5000 ký tự.'),
-  dueDate: z.string().refine((value) => !Number.isNaN(Date.parse(value)), {
-    message: 'Hạn nộp không hợp lệ.',
-  }),
+  dueDate: z
+    .string()
+    .refine((value) => !Number.isNaN(Date.parse(value)), {
+      message: 'Hạn nộp không hợp lệ.',
+    })
+    .refine((value) => Date.parse(value) >= Date.now(), {
+      message: 'Hạn nộp không được ở trong quá khứ.',
+    }),
 });
 
 function getStringField(formData: FormData, name: string): string | undefined {

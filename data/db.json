@@ -36,7 +36,8 @@
       "description": "Tích hợp NextAuth (Auth.js) v5, phân quyền RBAC và cấu hình Middleware bảo vệ route.",
       "dueDate": "2026-11-05T23:59:59Z",
       "completedBy": [
-        "sv@ptit.edu.vn"
+        "sv@ptit.edu.vn",
+        "admin@ptit.edu.vn"
       ]
     },
     {
@@ -68,7 +69,8 @@
       "description": "Tối ưu hóa câu truy vấn phức tạp, tạo Index và tìm hiểu View, Stored Procedure.",
       "dueDate": "2026-11-08T23:59:59Z",
       "completedBy": [
-        "hoaht.b23cc069@stu.ptit.edu.vn"
+        "hoaht.b23cc069@stu.ptit.edu.vn",
+        "admin@ptit.edu.vn"
       ]
     },
     {
@@ -155,6 +157,30 @@
       "title": "jsklfdksdl",
       "description": "",
       "dueDate": "2026-10-29T17:00:00.000Z",
+      "completedBy": []
+    },
+    {
+      "id": "16",
+      "subjectSlug": "mmt",
+      "title": "kkk",
+      "description": "",
+      "dueDate": "2026-10-20T17:00:00.000Z",
+      "completedBy": []
+    },
+    {
+      "id": "17",
+      "subjectSlug": "mmt",
+      "title": "ấdsadsa",
+      "description": "",
+      "dueDate": "2026-10-14T11:04:58.600Z",
+      "completedBy": []
+    },
+    {
+      "id": "18",
+      "subjectSlug": "mmt",
+      "title": "adaadssa",
+      "description": "",
+      "dueDate": "2026-10-28T17:00:00.000Z",
       "completedBy": []
     }
   ]
