@@ -1,0 +1,136 @@
+{
+  "subjects": [
+    {
+      "slug": "ltwnc",
+      "name": "Lập trình Web nâng cao"
+    },
+    {
+      "slug": "csdl",
+      "name": "Cơ sở dữ liệu"
+    },
+    {
+      "slug": "mmt",
+      "name": "Mạng máy tính"
+    },
+    {
+      "slug": "ai",
+      "name": "Trí tuệ nhân tạo"
+    }
+  ],
+  "deadlines": [
+    {
+      "id": "1",
+      "subjectSlug": "ltwnc",
+      "title": "Bài tập tuần 1",
+      "description": "Tìm hiểu kiến trúc Next.js App Router, SSR, SSG và ISR. Xây dựng trang tĩnh cơ bản.",
+      "dueDate": "2026-11-01T23:59:59Z",
+      "completedBy": [
+        "admin@ptit.edu.vn"
+      ]
+    },
+    {
+      "id": "2",
+      "subjectSlug": "ltwnc",
+      "title": "Bài tập tuần 2",
+      "description": "Tích hợp NextAuth (Auth.js) v5, phân quyền RBAC và cấu hình Middleware bảo vệ route.",
+      "dueDate": "2026-11-05T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "3",
+      "subjectSlug": "ltwnc",
+      "title": "Đồ án giữa kỳ",
+      "description": "Xây dựng cổng thông tin quản lý deadline trực tuyến Class Deadline Hub hoàn chỉnh.",
+      "dueDate": "2026-11-15T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "4",
+      "subjectSlug": "csdl",
+      "title": "Bài tập SQL 1",
+      "description": "Viết các câu truy vấn SELECT, JOIN và GROUP BY trên cơ sở dữ liệu quản lý bán hàng.",
+      "dueDate": "2026-11-02T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "5",
+      "subjectSlug": "csdl",
+      "title": "Bài tập SQL 2",
+      "description": "Tối ưu hóa câu truy vấn phức tạp, tạo Index và tìm hiểu View, Stored Procedure.",
+      "dueDate": "2026-11-08T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "6",
+      "subjectSlug": "csdl",
+      "title": "Thiết kế ERD",
+      "description": "Vẽ sơ đồ thực thể mối kết hợp ERD và chuẩn hóa lược đồ quan hệ về dạng chuẩn 3NF.",
+      "dueDate": "2026-11-12T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "7",
+      "subjectSlug": "mmt",
+      "title": "Cấu hình Router",
+      "description": "Thực hành cấu hình định tuyến tĩnh và RIP/OSPF trên Cisco Packet Tracer.",
+      "dueDate": "2026-11-03T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "8",
+      "subjectSlug": "mmt",
+      "title": "Bài tập Subnetting",
+      "description": "Chia địa chỉ mạng IPv4 sử dụng kỹ thuật VLSM và tính toán dải địa chỉ IP khả dụng.",
+      "dueDate": "2026-11-10T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "9",
+      "subjectSlug": "mmt",
+      "title": "Mô phỏng Wireshark",
+      "description": "Bắt và phân tích các gói tin HTTP, DNS, TCP bắt tay 3 bước qua phần mềm Wireshark.",
+      "dueDate": "2026-11-20T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "10",
+      "subjectSlug": "ai",
+      "title": "Thuật toán BFS/DFS",
+      "description": "Cài đặt thuật toán tìm kiếm mù BFS và DFS giải bài toán tìm đường đi trong mê cung.",
+      "dueDate": "2026-11-04T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "11",
+      "subjectSlug": "ai",
+      "title": "Huấn luyện mô hình cơ bản",
+      "description": "Xây dựng mô hình phân lớp hồi quy Logistic và SVM phân loại dữ liệu hoa Iris.",
+      "dueDate": "2026-11-18T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "12",
+      "subjectSlug": "ai",
+      "title": "Báo cáo cuối kỳ",
+      "description": "Báo cáo tiểu luận môn Trí tuệ nhân tạo, đánh giá mô hình học sâu và độ chính xác.",
+      "dueDate": "2026-11-25T23:59:59Z",
+      "completedBy": []
+    },
+    {
+      "id": "13",
+      "subjectSlug": "mmt",
+      "title": "xxx",
+      "description": "",
+      "dueDate": "2026-10-27T17:00:00.000Z",
+      "completedBy": []
+    },
+    {
+      "id": "14",
+      "subjectSlug": "csdl",
+      "title": "sdfsdf",
+      "description": "",
+      "dueDate": "2026-10-30T17:00:00.000Z",
+      "completedBy": []
+    }
+  ]
+}

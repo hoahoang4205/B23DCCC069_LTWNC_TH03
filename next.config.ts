@@ -1,14 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  transpilePackages: [
+    '@ant-design/icons',
+    '@ant-design/icons-svg',
+    'antd',
+    '@ant-design/nextjs-registry',
+    'rc-util',
+    'rc-pagination',
+    'rc-picker',
+  ],
   turbopack: {
     rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+      '*.css': {
+        loaders: ['@tailwindcss/turbopack'],
+        as: '*.css',
       },
     },
   },
