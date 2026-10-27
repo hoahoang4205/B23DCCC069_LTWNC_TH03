@@ -12,6 +12,7 @@ import {
 } from '@/components/icons';
 import type { Deadline, Subject } from '@/types';
 import Countdown from '@/components/Countdown';
+import { getSubjectTheme } from '@/lib/subject-theme';
 
 interface DeadlineFilterListProps {
   deadlines: Deadline[];
@@ -175,18 +176,22 @@ export default function DeadlineFilterList({
               minute: '2-digit',
             });
 
+            const theme = getSubjectTheme(item.subjectSlug);
+
             return (
               <Col xs={24} sm={12} lg={8} key={item.id}>
-                <div className="h-full bg-white rounded-2xl border border-slate-200 hover:border-blue-400 shadow-2xs hover:shadow-md transition-all p-5 flex flex-col justify-between group">
+                <div
+                  className={`h-full bg-white rounded-2xl border border-slate-200 ${theme.borderClass} shadow-2xs hover:-translate-y-1 transition-all duration-200 p-5 flex flex-col justify-between group`}
+                >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-100">
+                      <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${theme.badgeClass}`}>
                         {subjectName}
                       </span>
                       <Countdown dueDate={item.dueDate} />
                     </div>
 
-                    <h3 className="font-bold text-slate-800 text-base leading-snug group-hover:text-blue-600 transition-colors line-clamp-1 mb-2">
+                    <h3 className="font-extrabold text-slate-900 text-base leading-snug group-hover:text-blue-600 transition-colors line-clamp-1 mb-2">
                       <Link href={`/deadlines/${item.id}`}>{item.title}</Link>
                     </h3>
 
@@ -197,12 +202,12 @@ export default function DeadlineFilterList({
 
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 mt-auto">
                     <span className="flex items-center gap-1.5 font-medium">
-                      <CalendarOutlined className="text-blue-500" /> {dueDateFormatted}
+                      <CalendarOutlined className="text-slate-400" /> {dueDateFormatted}
                     </span>
 
                     <Link
                       href={`/deadlines/${item.id}`}
-                      className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1"
+                      className={`font-bold hover:underline inline-flex items-center gap-1 ${theme.accentText}`}
                     >
                       <span>Xem</span>
                       <RightOutlined />
@@ -218,6 +223,7 @@ export default function DeadlineFilterList({
         <div className="space-y-3">
           {visibleDeadlines.map((item) => {
             const subjectName = subjectMap.get(item.subjectSlug) || item.subjectSlug;
+            const theme = getSubjectTheme(item.subjectSlug);
             const dueDateFormatted = new Date(item.dueDate).toLocaleString('vi-VN', {
               day: '2-digit',
               month: '2-digit',
@@ -229,23 +235,23 @@ export default function DeadlineFilterList({
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl border border-slate-200 hover:border-blue-400 shadow-2xs hover:shadow-sm transition-all p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group"
+                className={`bg-white rounded-2xl border border-slate-200 ${theme.borderClass} shadow-2xs hover:shadow-md transition-all p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group`}
               >
                 <div className="space-y-1.5 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-100">
+                    <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${theme.badgeClass}`}>
                       {subjectName}
                     </span>
                     <Countdown dueDate={item.dueDate} />
                   </div>
 
-                  <h3 className="font-bold text-slate-800 text-base group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-extrabold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
                     <Link href={`/deadlines/${item.id}`}>{item.title}</Link>
                   </h3>
 
                   <div className="flex items-center gap-3 text-xs text-slate-500">
-                    <span className="flex items-center gap-1.5">
-                      <CalendarOutlined className="text-blue-500" /> Hạn nộp: {dueDateFormatted}
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <CalendarOutlined className="text-slate-400" /> Hạn nộp: {dueDateFormatted}
                     </span>
                     <span>•</span>
                     <span className="line-clamp-1">{item.description || 'Không có mô tả'}</span>
@@ -255,7 +261,7 @@ export default function DeadlineFilterList({
                 <div className="shrink-0 flex items-center">
                   <Link
                     href={`/deadlines/${item.id}`}
-                    className="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-600 text-xs font-semibold px-4 py-2 rounded-xl transition"
+                    className={`inline-flex items-center gap-1.5 ${theme.accentBg} ${theme.accentText} hover:opacity-80 text-xs font-bold px-4 py-2 rounded-xl transition`}
                   >
                     <span>Xem chi tiết</span>
                     <RightOutlined />

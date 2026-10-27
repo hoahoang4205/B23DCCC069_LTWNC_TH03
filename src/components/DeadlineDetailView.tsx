@@ -15,6 +15,7 @@ import {
 } from '@/components/icons';
 import type { Deadline, Subject } from '@/types';
 import { toggleComplete } from '@/app/actions/deadline';
+import { getSubjectTheme } from '@/lib/subject-theme';
 
 interface DeadlineDetailViewProps {
   deadline: Deadline;
