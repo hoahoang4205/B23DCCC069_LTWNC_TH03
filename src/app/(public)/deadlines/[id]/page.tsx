@@ -60,6 +60,9 @@ export async function generateMetadata({ params }: DeadlineDetailPageProps): Pro
       title: `${deadline.title} | ${subjectName}`,
       description: `Hạn nộp: ${formattedDate}`,
     },
+    alternates: {
+      canonical: `/deadlines/${deadline.id}`,
+    },
   };
 }
 

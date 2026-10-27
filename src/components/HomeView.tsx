@@ -19,7 +19,7 @@ export default function HomeView({ subjects, deadlines }: HomeViewProps) {
   return (
     <div className="space-y-10 max-w-6xl mx-auto">
       {/* Hero Section tinh gọn, không nút bấm rườm rà */}
-      <section className="rounded-3xl bg-linear-to-r from-blue-700 via-indigo-700 to-blue-800 text-white p-8 md:p-10 shadow-md">
+      <section className="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white p-8 md:p-10 shadow-md">
         <div className="max-w-2xl space-y-3">
           <span className="inline-block bg-white/20 text-blue-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
             Lớp Học Phần PTIT • Học Kỳ Hiện Tại

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Tag } from 'antd';
 import { ClockCircleOutlined, ExclamationCircleOutlined } from '@/components/icons';
 
 interface CountdownProps {
@@ -52,8 +51,7 @@ export default function Countdown({ dueDate }: CountdownProps) {
           const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
           text = `Còn ${hours} giờ ${minutes} phút`;
         } else {
-          const minutes = Math.floor((diff % (1000 * 60)) / 1000);
-          text = `Còn dưới 1 giờ`;
+          text = 'Còn dưới 1 giờ';
         }
         setTimeLeft({
           status: 'upcoming',
@@ -64,33 +62,47 @@ export default function Countdown({ dueDate }: CountdownProps) {
     };
 
     calculateTime();
-    const interval = setInterval(calculateTime, 60000); // cập nhật mỗi phút
+    const interval = setInterval(calculateTime, 60000);
     return () => clearInterval(interval);
   }, [dueDate]);
 
-  if (timeLeft.status === 'invalid') {
-    return <Tag color="error">{timeLeft.text}</Tag>;
-  }
-
   if (timeLeft.status === 'expired') {
     return (
-      <Tag
-        color="error"
-        icon={<ExclamationCircleOutlined />}
-        className="font-semibold text-xs px-2.5 py-1 rounded-md"
+      <span
+        role="timer"
+        aria-label={`Thời hạn nộp bài: ${timeLeft.text}`}
+        className="inline-flex items-center gap-1.5 font-semibold text-xs px-2.5 py-1 rounded-md bg-red-50 text-red-600 border border-red-200"
       >
-        {timeLeft.text}
-      </Tag>
+        <ExclamationCircleOutlined />
+        <span>{timeLeft.text}</span>
+      </span>
+    );
+  }
+
+  if (timeLeft.status === 'invalid') {
+    return (
+      <span
+        role="timer"
+        aria-label="Hạn nộp không hợp lệ"
+        className="inline-flex items-center gap-1.5 font-semibold text-xs px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 border border-slate-200"
+      >
+        <span>{timeLeft.text}</span>
+      </span>
     );
   }
 
   return (
-    <Tag
-      color={timeLeft.isUrgent ? 'warning' : 'processing'}
-      icon={<ClockCircleOutlined />}
-      className="font-medium text-xs px-2.5 py-1 rounded-md"
+    <span
+      role="timer"
+      aria-label={`Thời gian còn lại nộp bài: ${timeLeft.text}`}
+      className={`inline-flex items-center gap-1.5 font-medium text-xs px-2.5 py-1 rounded-md border ${
+        timeLeft.isUrgent
+          ? 'bg-amber-50 text-amber-800 border-amber-200'
+          : 'bg-blue-50 text-blue-800 border-blue-200'
+      }`}
     >
-      {timeLeft.text}
-    </Tag>
+      <ClockCircleOutlined />
+      <span>{timeLeft.text}</span>
+    </span>
   );
 }

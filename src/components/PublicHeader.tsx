@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Tag, Button } from 'antd';
 import { signOut, useSession } from 'next-auth/react';
 import {
   CalendarOutlined,
@@ -12,6 +11,7 @@ import {
   LogoutOutlined,
   LoginOutlined,
 } from '@/components/icons';
+
 export default function PublicHeader() {
   const pathname = usePathname();
   const { data: session, status } = useSession();
@@ -48,7 +48,7 @@ export default function PublicHeader() {
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav aria-label="Điều hướng chính" className="hidden md:flex items-center space-x-2">
             <Link
               href="/"
               className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -83,57 +83,53 @@ export default function PublicHeader() {
                   <span className="text-xs font-semibold text-slate-800 hidden sm:inline">
                     {user.name}
                   </span>
-                  <Tag
-                    color={isAdmin ? 'red' : 'green'}
-                    className="!mr-0 text-[11px] font-semibold"
+                  <span
+                    className={`text-[11px] font-semibold px-2 py-0.5 rounded-md border ${
+                      isAdmin
+                        ? 'bg-red-50 text-red-600 border-red-200'
+                        : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                    }`}
                   >
                     {isAdmin ? 'Lớp trưởng' : 'Sinh viên'}
-                  </Tag>
+                  </span>
                 </div>
 
                 {/* Nút vào phân hệ tương ứng */}
                 {isAdmin ? (
-                  <Link href="/admin">
-                    <Button
-                      type="primary"
-                      icon={<SettingOutlined />}
-                      className="bg-red-600 hover:bg-red-500 font-medium h-9 text-xs"
-                    >
-                      Quản Trị Lớp
-                    </Button>
+                  <Link
+                    href="/admin"
+                    className="inline-flex items-center gap-1.5 bg-red-600 hover:bg-red-500 text-white font-medium h-9 px-3.5 rounded-xl text-xs shadow-xs transition"
+                  >
+                    <SettingOutlined />
+                    <span>Quản Trị Lớp</span>
                   </Link>
                 ) : (
-                  <Link href="/dashboard">
-                    <Button
-                      type="primary"
-                      icon={<DashboardOutlined />}
-                      className="bg-blue-600 hover:bg-blue-500 font-medium h-9 text-xs"
-                    >
-                      Bảng Điều Khiển
-                    </Button>
+                  <Link
+                    href="/dashboard"
+                    className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white font-medium h-9 px-3.5 rounded-xl text-xs shadow-xs transition"
+                  >
+                    <DashboardOutlined />
+                    <span>Bảng Điều Khiển</span>
                   </Link>
                 )}
 
                 {/* Nút Đăng xuất */}
-                <Button
-                  danger
-                  type="text"
-                  icon={<LogoutOutlined />}
+                <button
+                  type="button"
                   onClick={() => signOut({ callbackUrl: '/' })}
-                  className="h-9 text-xs font-medium text-slate-600 hover:text-red-600"
+                  className="inline-flex items-center gap-1.5 h-9 px-2.5 text-xs font-medium text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-xl transition cursor-pointer"
                 >
+                  <LogoutOutlined />
                   <span className="hidden sm:inline">Đăng xuất</span>
-                </Button>
+                </button>
               </div>
             ) : status === 'unauthenticated' ? (
-              <Link href="/login">
-                <Button
-                  type="primary"
-                  icon={<LoginOutlined />}
-                  className="bg-blue-600 hover:bg-blue-500 font-semibold h-10 px-5 rounded-xl shadow-xs"
-                >
-                  Đăng Nhập
-                </Button>
+              <Link
+                href="/login"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold h-10 px-5 rounded-xl shadow-xs text-sm transition"
+              >
+                <LoginOutlined />
+                <span>Đăng Nhập</span>
               </Link>
             ) : (
               <span className="h-10 w-28" aria-hidden="true" />

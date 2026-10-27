@@ -1,6 +1,6 @@
 # 🎓 Class Deadline Hub - Cổng Quản Lý Deadline Lớp Học
 
-Dự án bài tập thực hành môn **Lập trình Web nâng cao** - Học viện Công nghệ Bưu chính Viễn thông (PTIT).
+Bài tập thực hành môn **Lập trình Web nâng cao** 
 
 ---
 
@@ -115,26 +115,13 @@ Route (app)
 
 ---
 
-## 🚀 5. Điểm Cộng & Tính Năng Nâng Cao
 
-1. **Đăng nhập GitHub OAuth (+1đ)**: Tích hợp sẵn cấu hình GitHub Provider trong Auth.js v5.
-2. **Kiểm thử Jest cho hàm phân quyền `can()` (+1đ)**:
-   - File kiểm thử: `tests/permissions.test.ts`.
-   - Bao phủ 100% các trường hợp: `guest`, `user`, `admin`, `undefined`, `null`.
-   - Kết quả: **PASS 12/12 test cases**.
-3. **SEO Đỉnh Cao**:
-   - Dynamic OpenGraph Image (`/deadlines/[id]/opengraph-image.tsx`) sinh tự động ảnh bìa chất lượng cao 1200x630px.
-   - Structured Data JSON-LD (`BreadcrumbList`) hợp chuẩn schema.org.
-   - Tự động sinh `sitemap.xml` và cấu hình `robots.txt` chặn lập chỉ mục các trang nội bộ (`/dashboard`, `/admin`, `/login`).
+## 📊 5. Kết Quả Đo Đạc & Ảnh Chụp Minh Chứng
 
----
-
-## 📊 6. Kết Quả Đo Đạc & Ảnh Chụp Minh Chứng
-
-### 6.1. Điểm Lighthouse
+### 5.1. Điểm Lighthouse
 *(Chạy đo Lighthouse trên trình duyệt Chrome ở chế độ Ẩn danh - Incognito cho bản Production)*:
-- **Trang chủ (`/`)**: Performance: 95+ | Accessibility: 95+ | Best Practices: 100 | SEO: 100
-- **Trang chi tiết (`/deadlines/1`)**: Performance: 95+ | Accessibility: 95+ | Best Practices: 100 | SEO: 100
+- **Trang chủ (`/`)**: Performance: 65 | Accessibility: 91 | Best Practices: 100 | SEO: 92
+- **Trang chi tiết (`/deadlines/1`)**: Performance: 95+ | Accessibility: 100 | Best Practices: 100 | SEO: 100
 
-### 6.2. Ảnh View-Source của `/deadlines/1`
+### 5.2. Ảnh View-Source của `/deadlines/1`
 *(Mở trình duyệt vào `view-source:http://localhost:3000/deadlines/1`, chụp ảnh màn hình thấy rõ các thẻ `<title>`, `<meta property="og:title">` và đoạn mã `<script type="application/ld+json">` được render trực tiếp từ server)*.

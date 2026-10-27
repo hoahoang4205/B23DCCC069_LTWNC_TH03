@@ -25,7 +25,8 @@
       "description": "Tìm hiểu kiến trúc Next.js App Router, SSR, SSG và ISR. Xây dựng trang tĩnh cơ bản.",
       "dueDate": "2026-11-01T23:59:59Z",
       "completedBy": [
-        "admin@ptit.edu.vn"
+        "admin@ptit.edu.vn",
+        "sv@ptit.edu.vn"
       ]
     },
     {
@@ -34,7 +35,9 @@
       "title": "Bài tập tuần 2",
       "description": "Tích hợp NextAuth (Auth.js) v5, phân quyền RBAC và cấu hình Middleware bảo vệ route.",
       "dueDate": "2026-11-05T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "sv@ptit.edu.vn"
+      ]
     },
     {
       "id": "3",
@@ -42,7 +45,10 @@
       "title": "Đồ án giữa kỳ",
       "description": "Xây dựng cổng thông tin quản lý deadline trực tuyến Class Deadline Hub hoàn chỉnh.",
       "dueDate": "2026-11-15T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "sv@ptit.edu.vn",
+        "admin@ptit.edu.vn"
+      ]
     },
     {
       "id": "4",
@@ -50,7 +56,10 @@
       "title": "Bài tập SQL 1",
       "description": "Viết các câu truy vấn SELECT, JOIN và GROUP BY trên cơ sở dữ liệu quản lý bán hàng.",
       "dueDate": "2026-11-02T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "hoaht.b23cc069@stu.ptit.edu.vn",
+        "admin@ptit.edu.vn"
+      ]
     },
     {
       "id": "5",
@@ -58,7 +67,9 @@
       "title": "Bài tập SQL 2",
       "description": "Tối ưu hóa câu truy vấn phức tạp, tạo Index và tìm hiểu View, Stored Procedure.",
       "dueDate": "2026-11-08T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "hoaht.b23cc069@stu.ptit.edu.vn"
+      ]
     },
     {
       "id": "6",
@@ -74,7 +85,9 @@
       "title": "Cấu hình Router",
       "description": "Thực hành cấu hình định tuyến tĩnh và RIP/OSPF trên Cisco Packet Tracer.",
       "dueDate": "2026-11-03T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "hoaht.b23cc069@stu.ptit.edu.vn"
+      ]
     },
     {
       "id": "8",
@@ -82,7 +95,9 @@
       "title": "Bài tập Subnetting",
       "description": "Chia địa chỉ mạng IPv4 sử dụng kỹ thuật VLSM và tính toán dải địa chỉ IP khả dụng.",
       "dueDate": "2026-11-10T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "hoaht.b23cc069@stu.ptit.edu.vn"
+      ]
     },
     {
       "id": "9",
@@ -90,7 +105,9 @@
       "title": "Mô phỏng Wireshark",
       "description": "Bắt và phân tích các gói tin HTTP, DNS, TCP bắt tay 3 bước qua phần mềm Wireshark.",
       "dueDate": "2026-11-20T23:59:59Z",
-      "completedBy": []
+      "completedBy": [
+        "hoaht.b23cc069@stu.ptit.edu.vn"
+      ]
     },
     {
       "id": "10",
@@ -130,6 +147,14 @@
       "title": "sdfsdf",
       "description": "",
       "dueDate": "2026-10-30T17:00:00.000Z",
+      "completedBy": []
+    },
+    {
+      "id": "15",
+      "subjectSlug": "ai",
+      "title": "jsklfdksdl",
+      "description": "",
+      "dueDate": "2026-10-29T17:00:00.000Z",
       "completedBy": []
     }
   ]
